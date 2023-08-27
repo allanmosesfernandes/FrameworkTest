@@ -1,7 +1,80 @@
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@400;500&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer components {
-    
+  body {
+    @apply bg-spaceBlue;
+  }
+	.hamburger-icon {
+		cursor: pointer;
+		width: 50px;
+		height: 50px;
+		transition: all 0.35s;
+		position: relative;
+		z-index: 999;
+		margin-left: auto;
+		border-radius: 50%;
+	}
+	.hamburger-top,
+	.hamburger-middle,
+	.hamburger-bottom {
+		position: absolute;
+		top: 32%;
+		left: 26%;
+		width: 24px;
+		height: 10px;
+		background: #fff;
+		transform: rotate(0);
+		transition: all 0.3s;
+		clip-path: polygon(0 0, 100% 0, 100% 23%, 14% 23%);
+	}
+
+	.hamburger-top {
+		@apply bg-secondary;
+	}
+	.hamburger-middle {
+		transform: translateY(7px);
+	}
+
+	.hamburger-bottom {
+		transform: translateY(14px);
+	}
+	.open {
+		transform: rotate(90deg);
+		transform: translateY(0px);
+	}
+
+	.open .hamburger-top {
+		transform: rotate(45deg) translateY(9px) translate(3px);
+	}
+	.open .hamburger-middle {
+		transform: rotate(-45deg) translateY(6px) translate(-6px);
+		opacity: 1;
+		width: 24px;
+	}
+
+	.open .hamburger-bottom {
+		opacity: 0;
+	}
+
+	.customBtn {
+		clip-path: polygon(100% 0, 100% 70%, 90% 100%, 0 100%, 0 0);
+	}
+
+  .bodycopy {
+    @apply text-base font-sora leading-30 text-white opacity-80;
+  }
+  .spacedText {
+    @apply uppercase tracking-[4.80px] text-secondary leading-5 text-sm font-sora;
+  }
+
+  .subheading {
+   @apply text-white font-sora;
+  }
+
+  .imageClip {
+    clip-path: polygon(50% 0%, 100% 0, 100% 100%, 0 100%, 0% 38%);
+  }
 }
