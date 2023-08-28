@@ -67,7 +67,7 @@
     @apply text-base font-sora leading-30 text-white opacity-80;
   }
   .spacedText {
-    @apply uppercase tracking-[4.80px] text-secondary leading-5 text-sm font-sora;
+    @apply uppercase tracking-[4.80px] text-secondary leading-5 text-sm font-sora font-medium;
   }
 
   .subheading {

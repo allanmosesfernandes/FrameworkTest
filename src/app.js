@@ -6,6 +6,7 @@ import Mission from "./components/Mission";
 import Challenge from "./components/Challenge";
 import Benefits from "./components/Benefits";
 import Memberships from "./components/Memberships";
+import Media from "./components/Media";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Challenge />
       <Benefits />
       <Memberships />
+      <Media />
     </div>
   );
 }

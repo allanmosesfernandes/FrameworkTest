@@ -58,7 +58,7 @@ function Slider() {
 
   return (
     <div className="slider-wrapper">
-      <div className="slider-container w-10/12 mx-auto md:min-h-[400px] min-h-[450px]">
+      <div className="slider-container w-10/12 mx-auto md:min-h-[400px] min-h-[500px]">
         <div className="slider">
           {slideData.map((slide, index) => (
             <div
@@ -77,7 +77,7 @@ function Slider() {
                   ))}
         </div>
       </div>
-      <div className="slider-controls md:my-10">
+      <div className="slider-controls my-10">
         <button onClick={prevSlide} type="button" className="border-white border-[1px] w-10 h-10 flex items-center justify-center rounded-full rotate-90">
           <img src={Arrow} alt="Arrow" />
         </button>
