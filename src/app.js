@@ -5,6 +5,7 @@ import FirstFold from "./components/FirstFold";
 import Mission from "./components/Mission";
 import Challenge from "./components/Challenge";
 import Benefits from "./components/Benefits";
+import Memberships from "./components/Memberships";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Mission />
       <Challenge />
       <Benefits />
+      <Memberships />
     </div>
   );
 }
