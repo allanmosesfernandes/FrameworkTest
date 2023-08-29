@@ -1,5 +1,3 @@
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-/* eslint-disable linebreak-style */
 import ArrowSVG from "../../assets/images/homepage/Arrow.svg";
 
 function Arrow(props) {

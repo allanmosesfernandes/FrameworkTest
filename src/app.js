@@ -6,7 +6,7 @@ import Mission from "./components/Mission";
 import Challenge from "./components/Challenge";
 import Benefits from "./components/Benefits";
 import Memberships from "./components/Memberships";
-import Media from "./components/Media";
+import Media from "./components/Media/Media";
 
 function App() {
   return (

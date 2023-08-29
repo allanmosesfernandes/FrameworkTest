@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Button from "./utils/Button";
 import Arrow from "../assets/images/homepage/Arrow.svg";
-import { slideData } from "./utils/Constants.js";
+import { slideData } from "./utils/constants.js";
 
 function Slider() {
 	const [currentIndex, setCurrentIndex] = useState(0);

@@ -1,11 +1,6 @@
-/* eslint-disable max-len */
-/* eslint-disable no-tabs */
-/* eslint-disable linebreak-style */
-/* eslint-disable indent */
-// eslint-disable-next-line import/no-extraneous-dependencies
 import axios from "axios";
 import { useEffect, useState } from "react";
-import MEDIA_CARDS_URL from "./Constants";
+import MEDIA_CARDS_URL from "./constants";
 
 const useMediaCards = (props) => {
 	const [post, setPost] = useState(null);
@@ -21,6 +16,5 @@ const useMediaCards = (props) => {
 	}, []);
 	return { post };
 };
-
 
 export default useMediaCards;

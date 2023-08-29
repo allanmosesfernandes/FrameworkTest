@@ -5,7 +5,7 @@
 
 @layer components {
   body {
-    @apply bg-spaceBlue;
+    @apply bg-spaceBlue font-sora;
   }
 	.hamburger-icon {
 		cursor: pointer;
@@ -147,5 +147,4 @@
   border-radius: 50%;
   transform: translate(-50%, -50%);
 }
-
 }
