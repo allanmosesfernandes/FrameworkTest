@@ -16,6 +16,7 @@ module.exports = {
         circles: "url('/src/assets/images/circles.svg')",
         blueGradient: "url('/src/assets/images/gradient.png')",
         mountains: "url('/src/assets/images/benefits.png')",
+        contactBG: "url('/src/assets/images/getintouch/background.jpg')",
       },
       fontFamily: {
         sora: ["Sora", "sans-serif"],

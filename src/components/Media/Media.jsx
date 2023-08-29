@@ -30,7 +30,7 @@ function Media() {
 						transition={0.5}
 						swiping={true}
 						responsive={true}
-						className="md:mt-10 mt-5 relative mb-20"
+						className="md:mt-10 mt-5 relative mb-[10rem]"
 						rightArrow={<CarouselArrowRight />}
 						leftArrow={<CarouselArrowLeft />}
 						useArrowKeys={true}

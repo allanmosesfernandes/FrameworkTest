@@ -7,6 +7,7 @@ import Challenge from "./components/Challenge";
 import Benefits from "./components/Benefits";
 import Memberships from "./components/Memberships";
 import Media from "./components/Media/Media";
+import GetInTouch from "./components/GetInTouch";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Benefits />
       <Memberships />
       <Media />
+      <GetInTouch />
     </div>
   );
 }
