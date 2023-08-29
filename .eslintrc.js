@@ -1,35 +1,35 @@
 module.exports = {
-  env: {
-    browser: true,
-    es2021: true,
+	env: {
+		browser: true,
+		es2021: true,
+		jest: true,
 	},
-	extends: "airbnb",
-	overrides: [
-		{
-			env: {
-				node: true,
-			},
-			files: [".eslintrc.{js,cjs}"],
-			parserOptions: {
-				sourceType: "script",
-			},
-		},
+	extends: [
+		"react-app",
+		"airbnb",
+		"plugin:react/recommended",
+		"plugin:prettier/recommended",
 	],
 	parserOptions: {
-		ecmaVersion: "latest",
+		ecmaVersion: 2021,
 		sourceType: "module",
 	},
 	rules: {
 		quotes: ["error", "double"],
 		"react/jsx-uses-react": "off",
 		"react/react-in-jsx-scope": "off",
-		"no-console": "error", // Disallow the use of console.log
-		"eol-last": ["error", "always"],
-		"prettier/prettier": [
-			"error",
-			{
-				endOfLine: "auto",
-			},
-		],
+		"no-console": "error",
 	},
+	plugins: ["react", "react-hooks", "prettier"],
+	overrides: [
+		{
+			env: {
+				node: true,
+			},
+			files: [".eslintrc.js"],
+			parserOptions: {
+				sourceType: "script",
+			},
+		},
+	],
 };
