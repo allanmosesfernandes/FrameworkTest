@@ -9,12 +9,14 @@ function MediaCard(props) {
 	const background_image = post?.yoast_head_json?.og_image?.[0]?.url;
 	console.log(background_image);
 	return (
-		<div
-			className="h-[573px] p-6 md:mr-6 mr-0 bg-cover cursor-pointer flex flex-col justify-between"
-			style={{
-				backgroundImage: `url(${background_image})`,
-			}}
-		>
+		<div className="group overflow-hidden relative h-[573px] p-6 md:mr-6 mr-0 cursor-pointer flex flex-col justify-between">
+			<div
+				className="absolute inset-0 bg-cover group-hover:scale-110 ease-linear duration-300 z-1 w-full "
+				style={{
+					backgroundImage: `url(${background_image})`,
+					zIndex: -1,
+				}}
+			></div>
 			{/* Card Ribbon */}
 			<div
 				className="card-category font-bold text-xs uppercase mt-2 leading-[14.75px] tracking-[3.60px] text-white w-fit p-2 rounded-full"

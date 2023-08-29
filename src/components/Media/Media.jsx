@@ -1,22 +1,42 @@
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 import useMediaCards from "../utils/useMediaCards";
 import MediaCard from "./MediaCards";
 import { Carousel } from "@trendyol-js/react-carousel";
-import Arrow from "../utils/Arrow";
-import Button from "../utils/Button";
 import CarouselArrowLeft from "./CarouselArrowLeft";
 import CarouselArrowRight from "./CarouselArrowRight";
 
 function Media() {
 	const { post } = useMediaCards();
-	const [mobile, setMobile] = useState(window.innerWidth < 768);
-	window.addEventListener("resize", () => {
-		setMobile(window.innerWidth < 768);
-	});
-	const category = "events"; // Note: You declared this but didn't use it
-	const rightArr = () => {
-		return <h2>right</h2>;
-	};
+	const [showCount, setShowCount] = useState(3.5);
+	const [slideCount, setSlideCount] = useState(3);
+
+	useEffect(() => {
+		const handleResize = () => {
+			const width = window.innerWidth;
+			if (width < 768) {
+				setShowCount(1);
+				setSlideCount(1);
+			} else if (width < 1280) {
+				setShowCount(2);
+				setSlideCount(2);
+			} else {
+				setShowCount(3.5);
+				setSlideCount(3);
+			}
+		};
+
+		// Initial setup
+		handleResize();
+
+		// Add event listener
+		window.addEventListener("resize", handleResize);
+
+		// Cleanup
+		return () => {
+			window.removeEventListener("resize", handleResize);
+		};
+	}, []);
+
 	return (
 		<section className="media lg:px-10 px-4">
 			<h2 className="font-sora text-white md:text-5xl text-3xl leading-63">
@@ -25,8 +45,8 @@ function Media() {
 			{post ? (
 				post.length ? (
 					<Carousel
-						show={mobile ? 1 : 3.5}
-						slide={mobile? 1: 3}
+						show={showCount}
+						slide={slideCount}
 						transition={0.5}
 						swiping={true}
 						responsive={true}

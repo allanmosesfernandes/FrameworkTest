@@ -1,11 +1,12 @@
 import Logo from "../assets/images/homepage/Logo.svg";
 import TwitterLogo from "../assets/images/twitter.svg";
+import FrameworkLogo from "../assets/images/framework-logo.svg";
 
 function Footer() {
 	return (
-		<footer className="bg-footerBlue">
+		<footer className="bg-footerBlue lg:px-10 px-4 text-white">
 			{/* Footer Top */}
-			<div className="flex lg:flex-row flex-col lg:px-10 px-4 py-[80px] items-baseline justify-around">
+			<div className="flex lg:flex-row flex-col py-[80px] items-baseline justify-between">
 				<div className="flex items-center justify-between lg:w-auto w-full">
 					<img
 						src={Logo}
@@ -18,7 +19,7 @@ function Footer() {
 						className="lg:hidden block self-baseline"
 					/>
 				</div>
-				<div className="flex flex-col self-start gap-[18px] lg:mb-auto mb-[50px]">
+				<div className="flex flex-col self-start gap-[18px] lg:mb-auto mb-[50px] ">
 					<p className="text-sm uppercase text-white font-medium leading-17 tracking-[4.2px]">
 						Contact us
 					</p>
@@ -71,6 +72,20 @@ function Footer() {
 				<div>
 					<img src={TwitterLogo} alt="Twitter" className="lg:block hidden" />
 				</div>
+			</div>
+			{/* Footer Bottom */}
+			<div className="flex lg:flex-row flex-col w-full justify-between pb-[30px] md:gap-auto gap-[20px] lg:mt-auto -mt-[50px]">
+				<p className="tracking-[0.24px] text-xs">
+					© StarForm 2022 | All rights reserved.
+				</p>
+				<p className="flex gap-2 text-xs items-center">
+					Website design by{" "}
+					<span>
+						<a href="https://www.weareframework.co.uk/">
+                            <img src={FrameworkLogo} alt="Framework" className="w-[82px]"/>
+                        </a>
+					</span>
+				</p>
 			</div>
 		</footer>
 	);
