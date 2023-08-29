@@ -127,7 +127,7 @@
   border-radius: 50%;
   cursor: pointer;
   border: 1px solid white;
-  position: relative; /* Add this */
+  position: relative; 
 }
 
 .dot.active {
@@ -153,4 +153,46 @@
 .footer-links > li {
   @apply text-sm;
 }
+
+.spin {
+  height: 36px;
+  width: 36px;
+  position: relative; 
+  cursor: pointer;
+}
+
+.spin::before,
+.spin::after {
+  content: ""; 
+  position: absolute; 
+  top: 0;
+  left: 0;
+  width: 100%; 
+  height: 100%; 
+  border-radius: 50%; 
+}
+
+.spin::before {
+  border: 2px solid white;
+  border-top-color: white; 
+}
+
+.spin:hover::before {
+  border-top-color: #E8B222;
+  border-right-color: #E8B222;
+  border-bottom-color: #E8B222;
+  transition: border-top-color 0.15s linear, border-right-color 0.15s linear 0.10s, border-bottom-color 0.15s linear 0.20s;
+}
+
+.spin::after {
+  border: 2px solid transparent; 
+  border-top-color: white; 
+}
+
+.spin:hover::after {
+  border-top-color: #E8B222;
+  transform: rotate(270deg);
+  transition: transform 0.4s linear 0s;
+}
+
 }
