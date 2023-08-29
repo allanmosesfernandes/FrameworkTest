@@ -18,8 +18,8 @@ function Benefits() {
 	}, []);
 
 	return (
-		<section className="relative z-10 bg-mountains h-full flex items-center flex-col">
-			<div className="absolute bg-blueGradient w-full h-full items-center justify-center" />
+		<section className="relative z-10 bg-mountains h-full flex items-center flex-col bg-no-repeat bg-cover">
+			<div className="absolute bg-blueGradient w-full h-full items-center justify-center bg-no-repeat bg-auto lg:bg-cover " />
 			<div className="content md:mt-[10rem] mt-[5rem] text-center flex flex-col z-50 w-full">
 				<p className="spacedText mb-4">
 					{isMobile ? "Our Objectives" : "The benefits of Space Solar"}

@@ -8,6 +8,7 @@ import Benefits from "./components/Benefits";
 import Memberships from "./components/Memberships";
 import Media from "./components/Media/Media";
 import GetInTouch from "./components/GetInTouch";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <Memberships />
       <Media />
       <GetInTouch />
+      <Footer />
     </div>
   );
 }

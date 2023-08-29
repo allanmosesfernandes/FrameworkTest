@@ -147,4 +147,8 @@
   border-radius: 50%;
   transform: translate(-50%, -50%);
 }
+
+.footer-links > li {
+  @apply text-sm;
+}
 }
