@@ -38,7 +38,7 @@ function Media() {
 	}, []);
 
 	return (
-		<section className="media lg:px-10 px-4">
+		<section className="md:mt-[64px] lg:px-10 px-4">
 			<h2 className="font-sora text-white md:text-5xl text-3xl leading-63">
 				Media
 			</h2>
