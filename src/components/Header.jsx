@@ -51,6 +51,7 @@ function Header() {
 							</a>
 						</li>
 					))}
+					<li className="md:hidden block">News Mobile </li>
 				</ul>
 			</nav>
 		</header>

@@ -18,7 +18,7 @@ function Slider() {
 
 	return (
 		<div className="slider-wrapper">
-			<div className="slider-container w-10/12 mx-auto md:min-h-[400px] min-h-[500px]">
+			<div className="slider-container md:w-10/12 w-11/12 mx-auto md:min-h-[400px] min-h-[600px]">
 				<div className="slider">
 					{slideData.map((slide, index) => (
 						<div
