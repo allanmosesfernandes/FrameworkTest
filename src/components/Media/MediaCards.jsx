@@ -5,9 +5,7 @@ function MediaCard(props) {
 	const { post } = props;
 	const { acf } = post;
 	const { post_date, card_description, card_title, card_type } = acf;
-	console.log(post_date);
 	const background_image = post?.yoast_head_json?.og_image?.[0]?.url;
-	console.log(background_image);
 	return (
 		<div className="group overflow-hidden relative h-[573px] p-6 md:mr-6 mr-0 cursor-pointer flex flex-col justify-between">
 			<div
