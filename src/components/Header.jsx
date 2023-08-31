@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Logo from "../assets/images/homepage/Logo.svg";
+import ArrowYellow from "../assets/images/arrowYellow.svg";
 
 function Header() {
 	const LINKS = [
@@ -7,11 +8,12 @@ function Header() {
 		{ name: "About us", link: "#home" },
 		{ name: "Technology", link: "#home" },
 		{ name: "Investor Relations", link: "#home" },
-		{ name: "News & Resources", link: "#home" },
+		{ name: "News & Resources", link: "#home", subMenu: ["News", "Resources"] },
 		{ name: "Contact us", link: "#home" },
 	];
 
 	const [openMenu, setOpenMenu] = useState(false);
+	const [openSubMenu, setOpenSubMenu] = useState(false);
 
 	return (
 		<header
@@ -29,7 +31,13 @@ function Header() {
 					<button
 						className={openMenu ? "hamburger-icon open" : "hamburger-icon"}
 						type="button"
-						onClick={() => setOpenMenu(!openMenu)}
+						onClick={() => {
+							setOpenMenu(!openMenu);
+							if (openMenu) {
+								// If the menu is currently open, then we are about to close it
+								setOpenSubMenu(false); // Reset the submenu state
+							}
+						}}
 					>
 						<span className="hamburger-top" />
 						<span className="hamburger-middle" />
@@ -43,15 +51,58 @@ function Header() {
 				>
 					{LINKS.map((link, index) => (
 						<li key={index}>
-							<a
-								href={link.link}
-								className="text-white hover:text-secondary hover:underline ease-in duration-200 hover:decoration-solid"
-							>
-								{link.name}
-							</a>
+							{link.subMenu ? (
+								<>
+									<button
+										onClick={() => setOpenSubMenu(true)}
+										className="text-white hover:text-secondary hover:underline ease-in duration-200 hover:decoration-solid text-xl flex items-center"
+									>
+										{link.name}{" "}
+										<span>
+											<img
+												src={ArrowYellow}
+												alt="yellow arrow"
+												className="ml-[20px]"
+											/>
+										</span>
+									</button>
+									{openSubMenu && (
+										<ul className="absolute top-0 left-0 w-full h-screen bg-spaceBlue flex flex-col p-4 gap-4 pt-[70px]">
+											<li className="text-xl ">
+												<button
+													onClick={() => setOpenSubMenu(false)}
+													className="text-white flex items-center gap-2"
+												>
+													<span>
+														<img
+															src={ArrowYellow}
+															alt="yellow arrow"
+															className="rotate-180"
+														/>
+													</span>
+													{link.name}
+												</button>
+											</li>
+											{link.subMenu.map((subLink, subIndex) => (
+												<li key={subIndex} className="text-xl">
+													<a href="#home" className="text-white ">
+														{subLink}
+													</a>
+												</li>
+											))}
+										</ul>
+									)}
+								</>
+							) : (
+								<a
+									href={link.link}
+									className="text-white text-xl hover:text-secondary hover:underline ease-in duration-200 hover:decoration-solid"
+								>
+									{link.name}
+								</a>
+							)}
 						</li>
 					))}
-					<li className="md:hidden block">News Mobile </li>
 				</ul>
 			</nav>
 		</header>
